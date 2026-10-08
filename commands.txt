@@ -1,0 +1,14 @@
+  451  git clone https://github.com/ryankimqtm/datasci350-quiz02
+  452  cd datasci350-quiz02
+  453  quarto create project website .
+  454  echo "/_site/" >> .gitignore && echo "__pycache__/" >> .gitignore && git add .gitignore && git commit -m "Add gitignore"
+  455  nano _quarto.yml
+  456  code .
+  457  quarto render
+  458  ls _freeze
+  459  git add -A
+  460  git commit -m "Add site pages and freeze"
+  461  git status
+  462  quarto publish gh-pages
+Publishing route: quarto publish gh-pages (direct route)
+  463  history | tail -n 30 > commands.txt
