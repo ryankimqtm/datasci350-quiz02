@@ -12,3 +12,7 @@
   462  quarto publish gh-pages
 Publishing route: quarto publish gh-pages (direct route)
   463  history | tail -n 30 > commands.txt
+git add -A
+git commit -m "Record site publishing"
+git push
+
