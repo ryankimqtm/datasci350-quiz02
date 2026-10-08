@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "This page compares the budgets and revenues of the films through scatterplot. In Figure 1, scatterplot shows whether budget size results in increased revenue size.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget\")\nplt.ylabel(\"Revenue\")\nplt.title(\"Budget vs. Revenue\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Relationship between budget and revenue for movies in dataset"
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "This page compares whether longer films have higher IMDb ratings. In Figure 1, the scatter plot compares each film’s runtime with its rating.\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDb Rating\")\nplt.title(\"Runtime vs. IMDb Rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Relationship between film runtime and IMDb rating"
+  },
+  {
+    "objectID": "runtime-rating.html#average-rating-by-decade",
+    "href": "runtime-rating.html#average-rating-by-decade",
+    "title": "Runtime and Ratings",
+    "section": "Average Rating by Decade",
+    "text": "Average Rating by Decade\nThe table below shows average IMDb rating of films released each decade.\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "Bond Films",
+    "section": "",
+    "text": "This page looks at how the revenue of James Bond films changed over time. In Figure 1, it shows the revenue of each Bond film by release year.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Release Year\")\nplt.ylabel(\"Revenue (million USD)\")\nplt.title(\"James Bond Revenue Over Time\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Worldwide revenue of James Bond films over time\n\n\n\n\n\nThe first James Bond film in dataset was released in 1995, and last was released in 2021."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Film Dataset",
+    "section": "",
+    "text": "Website utilizes dataset with various films which allows me to compare how the films performed. This was through information on runtimes, revenues, ratings, and budgets."
+  },
+  {
+    "objectID": "index.html#analysis-pages",
+    "href": "index.html#analysis-pages",
+    "title": "Film Dataset",
+    "section": "Analysis Pages",
+    "text": "Analysis Pages\n\nBudget + Revenue\nRuntime + Ratings\nBond Films"
+  },
+  {
+    "objectID": "index.html#ai-used",
+    "href": "index.html#ai-used",
+    "title": "Film Dataset",
+    "section": "AI used",
+    "text": "AI used\nI used chatGPT to proof read to ensure I did not have major code errors."
+  }
+]
