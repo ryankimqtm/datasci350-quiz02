@@ -15,4 +15,7 @@ Publishing route: quarto publish gh-pages (direct route)
 git add -A
 git commit -m "Record site publishing"
 git push
-
+nano commands.txt
+git add -A
+git commit -m "Add command log"
+git push origin main
