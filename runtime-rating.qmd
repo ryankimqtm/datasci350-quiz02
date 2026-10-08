@@ -1,0 +1,33 @@
+---
+title: "Runtime and Ratings"
+---
+
+This page compares whether longer films have higher IMDb ratings. In @fig-runtime-rating, the scatter plot compares each film's runtime with its rating.
+
+```{python}
+#| echo: true
+#| label: fig-runtime-rating
+#| fig-cap: "Relationship between film runtime and IMDb rating"
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+
+plt.scatter(films["runtime_min"], films["imdb_rating"])
+plt.xlabel("Runtime (minutes)")
+plt.ylabel("IMDb Rating")
+plt.title("Runtime vs. IMDb Rating")
+plt.show()
+```
+
+## Average Rating by Decade
+
+The table below shows average IMDb rating of films released each decade.
+
+```{python}
+#| echo: true
+
+films["decade"] = films["year"] // 10 * 10
+films.groupby("decade")["imdb_rating"].mean().round(2)
+```

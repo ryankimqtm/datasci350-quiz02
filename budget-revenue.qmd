@@ -1,0 +1,22 @@
+---
+title: "Budget and Revenue"
+---
+
+This page compares the budgets and revenues of the films through scatterplot. In @fig-budget-revenue, scatterplot shows whether budget size results in increased revenue size.
+
+```{python}
+#| echo: true
+#| label: fig-budget-revenue
+#| fig-cap: "Relationship between budget and revenue for movies in dataset"
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+
+plt.scatter(films["budget_musd"], films["revenue_musd"])
+plt.xlabel("Budget")
+plt.ylabel("Revenue")
+plt.title("Budget vs. Revenue")
+plt.show()
+```

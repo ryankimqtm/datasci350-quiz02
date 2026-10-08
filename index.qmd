@@ -1,0 +1,15 @@
+---
+title: "Film Dataset"
+---
+
+Website utilizes dataset with various films which allows me to compare how the films performed. This was through information on runtimes, revenues, ratings, and budgets.
+
+## Analysis Pages
+
+- [Budget + Revenue](budget-revenue.qmd)
+- [Runtime + Ratings](runtime-rating.qmd)
+- [Bond Films](bond.qmd)
+
+## AI used
+
+I used chatGPT to proof read to ensure I did not have major code errors.
